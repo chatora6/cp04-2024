@@ -199,6 +199,7 @@
         period = 60 *parseInt($("#minute").val())+parseInt($("#second").val());
         $("#time").html("経過時間：0");
         $("#remain").html("残り時間："+period);
+        $("#remain").css("color","#f8f8ff");
     }
     
  
@@ -209,10 +210,14 @@
             rest = period - etime;
             $("#time").html("経過時間："+ etime);
             $("#remain").html("残り時間："+rest);
+            
             analog(rest);
             if(rest<=0){
                 active = false;
                 alarm();
+            }
+            if(rest <=10 && rest >= 0 ){
+                $("#remain").css("color","red");
             }
         }
     } 
@@ -231,6 +236,6 @@
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>  
     <input type="number" id="minute" value=0 >
-    <input type="number" id="second" value=15 >
+    <input type="number" id="second" value=11 >
 </body>
 </html>
