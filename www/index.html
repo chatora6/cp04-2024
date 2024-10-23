@@ -178,18 +178,18 @@
         audio.src = "pin.wav";
         audio.play();
     }
-    
+
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
         active =  true;
         startTime = new Date();
-        
+        $("#coment").html("開始されました。");
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
-        
+        $("#coment").html("停止中。");
     }
 
     // ButtonCがクリックされた時の処理
@@ -200,6 +200,7 @@
         $("#time").html("経過時間：0");
         $("#remain").html("残り時間："+period);
         $("#remain").css("color","#f8f8ff");
+        $("#coment").html("アラームがセットされました。");
     }
     
  
@@ -217,7 +218,14 @@
                 alarm();
             }
             if(rest <=10 && rest >= 0 ){
-                $("#remain").css("color","red");
+                $("#remain").css("color","red"); 
+            }else{
+                $("#remain").css("color","#f8f8ff");
+            }
+            if(etime>=rest && rest >0){
+                $("#coment").html("残り時間が半分をきりました。");
+            }else if(rest <=0){
+                $("#coment").html("終了しました。");
             }
         }
     } 
@@ -234,8 +242,11 @@
     <div id="time">Time</div>
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
-    <button id="btnC">Set</button>  
+    <button id="btnC">Set</button>
+  
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=11 >
+    <div id="coment">Setしてください</div>
+    
 </body>
 </html>
