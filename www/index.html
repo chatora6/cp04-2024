@@ -187,13 +187,13 @@
     function btnAClick(e){
         active =  true;
         startTime = new Date();
-        $("#coment").html("開始されました。");
+        $("#comment").html("開始されました。");
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
-        $("#coment").html("停止中。");
+        $("#comment").html("停止中。");
     }
 
     // ButtonCがクリックされた時の処理
@@ -204,7 +204,7 @@
         $("#time").html("経過時間：0");
         $("#remain").html("残り時間："+period);
         $("#remain").css("color","#f8f8ff");
-        $("#coment").html("アラームがセットされました。");
+        $("#comment").html("アラームがセットされました。");
     }
     
     function btnDClick(e){
@@ -231,9 +231,9 @@
                 $("#remain").css("color","#f8f8ff");
             }
             if(etime>=rest && rest >0){
-                $("#coment").html("残り時間が半分をきりました。");
+                $("#comment").html("残り時間が半分をきりました。");
             }else if(rest <=0){
-                $("#coment").html("終了しました。");
+                $("#comment").html("終了しました。");
             }
         }
     } 
@@ -254,7 +254,7 @@
   
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=13 >
-    <div id="coment">Setしてください</div>
+    <div id="comment">Setしてください</div>
     <button id="btnD">Change</button>
     
 </body>
