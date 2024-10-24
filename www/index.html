@@ -38,6 +38,10 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
         init();
     });
     
@@ -162,7 +166,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
-        
+        $('#btnD').prop('disabled', false);
     }
 
     // Alarmの処理
@@ -203,7 +207,11 @@
         $("#coment").html("アラームがセットされました。");
     }
     
- 
+    function btnDClick(e){
+        active=false;
+        $("body").css("background","#4682b4");
+        $("button").css("background","#add8e6");
+    }
     // 繰り返し実行する処理
     function timer(){  
         if(active){
@@ -218,7 +226,7 @@
                 alarm();
             }
             if(rest <=10 && rest >= 0 ){
-                $("#remain").css("color","red"); 
+                $("#remain").css("color","#000000"); 
             }else{
                 $("#remain").css("color","#f8f8ff");
             }
@@ -247,6 +255,7 @@
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=11 >
     <div id="coment">Setしてください</div>
+    <button id="btnD">Change</button>
     
 </body>
 </html>
