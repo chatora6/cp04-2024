@@ -81,18 +81,17 @@
     }
 
     #coment{
+        padding: 0px;
+        margin: 0px;
         color: #e8ffe8;
         font-size: 30px;
         position:absolute; top:550px; 
-        
     }
     
     input[type=number] {text-align: right;}
 
     body {
         background: #66cdaa;
-        padding: 0px;
-        margin: 0px;
     }
     button{
         color: #346d4d;
